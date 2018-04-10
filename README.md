@@ -16,6 +16,7 @@ So how to run it.
 5. Open a terminal in the directory of the code and run
    ``python`` to get into python console.
 6. Now import the class ``import nq``
-7. Instantaite an object of Queen ``e = nq.queen(_N_ , _number_of_population_per_generation_)``
+7. Instantaite an object of Queen ``e = nq.queen(N , number_of_population_per_generation)``
+... ``N`` for the number of Queens in a N X N board. ``number_of_population_per_generation`` for starting amount of random solution. keep it under for lower ``N`` higher for bigger ``N``
 8. Run it ``e.makeitrain()``
 9. Wait.
