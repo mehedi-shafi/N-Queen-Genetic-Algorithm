@@ -165,3 +165,8 @@ class queen:
 
     def ncr(self, n, r):
         return len(list(combinations([random.randint(1, n) for x in range(n)], r)))
+
+
+if __name__ == '__main__':
+    executor = queen(8, 4)
+    executor.makeitrain()
