@@ -38,7 +38,7 @@ class Queen:
             cnt = 0
             if xp % 4 == 0:
                 xy += 1
-                xp = 0
+                xp = 0            
             for i in range(1,self.N+1):
                 for z in range(1,self.N+1):         
                     #check if current loop value is even
@@ -53,8 +53,20 @@ class Queen:
                 #since theres an even number of squares go back one value
                 if boardLength % 2 == 0:
                     cnt-=1
+                
                 #Add a nice boarder
                 pygame.draw.rect(gameDisplay,self.BLACK,[size*z+(xp*(size*boardLength+50)),size*i+(xy*(size*boardLength+50)),size,size],3)
+
+            # print the fitness
+            monaco_font = pygame.font.SysFont('monaco', 24)
+            f_ = self.fitness(self.current_solutions[j])
+            if f_ == self.maximum_conflict:
+                fitness_text = monaco_font.render(f'{f_}', True, self.RED)
+            else:
+                fitness_text = monaco_font.render(f'{f_}', True, self.BLACK)
+            fitness_text_rect = fitness_text.get_rect()
+            fitness_text_rect.midtop = ((size * self.N * xp) + (size * (xp + 1) * (self.N // 2 + 1)) - (xp * 2 * size), (size * (xy + 1) * self.N) + (50 * (xy + 1)) )
+            self.board_window.blit(fitness_text, fitness_text_rect)
             xp += 1
 
     def updateWindow(self):
