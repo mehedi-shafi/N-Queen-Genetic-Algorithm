@@ -202,7 +202,12 @@ class Queen:
             self.current_solutions = self.generateRandomSolution(self.population_size)
 
     def ncr(self, n, r):
-        return len(list(combinations([random.randint(1, n) for x in range(n)], r)))
+        def fact(n):
+            res = 1
+            for i in range(2, n + 1):
+                res = res * i
+            return res
+        return (fact(n) // (fact(r) * fact(n - r)))
 
 if __name__ == '__main__':
     solver = Queen(6, 10)
