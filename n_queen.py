@@ -17,12 +17,12 @@ class Queen:
     BLOCK_SIZE = 30
     QUEEN_THUMB = 'images/queen.png'
 
-    def __init__(self, N: int , generation: int = 4, threshold: int = 15):
+    def __init__(self, N: int , popluation_size: int = 4, threshold: int = 15):
         self.N = N
-        self.population_size = generation
+        self.population_size = population_size
         self.threshold = threshold
         self.maximum_conflict = self.ncr(N, 2)
-        self.current_solutions = self.generateRandomSolution(generation)
+        self.current_solutions = self.generateRandomSolution(population_size)
         self.initdisplay()
 
     def drawChessBoard(self):
