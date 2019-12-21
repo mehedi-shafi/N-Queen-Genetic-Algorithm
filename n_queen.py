@@ -17,7 +17,7 @@ class Queen:
     BLOCK_SIZE = 30
     QUEEN_THUMB = 'images/queen.png'
 
-    def __init__(self, N: int , popluation_size: int = 4, threshold: int = 15):
+    def __init__(self, N: int , population_size: int = 4, threshold: int = 15):
         self.N = N
         self.population_size = population_size
         self.threshold = threshold
